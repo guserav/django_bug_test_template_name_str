@@ -3,6 +3,7 @@
 reports/
 .coverage
 *.mo
+*.sqlite3
 
 # OS generated files #
 ######################

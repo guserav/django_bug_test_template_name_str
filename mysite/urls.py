@@ -16,9 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import index
+from .views import index, Broken_Template_View, broken_render_to_string, Working_Template_View, Potentially_Poisoned_Template_View
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', index),
+    path('admin/', admin.site.urls),
+    path('broken_template_view', Broken_Template_View.as_view()),
+    path('working_template_view', Working_Template_View.as_view()),
+    path('potentially_poisoned_view', Potentially_Poisoned_Template_View.as_view()),
+    path('broken_render_to_string', broken_render_to_string),
 ]
